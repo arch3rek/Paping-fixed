@@ -22,6 +22,7 @@
     <ProjectGuid>{639D71F0-5B1C-4C5D-9F92-887CD7B85515}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>paping_vs2010</RootNamespace>
+    <ProjectName>paping_vs2022</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -147,7 +148,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\src\arguments.cpp" />
-    <ClCompile Include="..\src\gettimeofday.c" />
+    <ClCompile Include="..\src\gettimeofday.cpp" />
     <ClCompile Include="..\src\host.cpp" />
     <ClCompile Include="..\src\i18n.cpp" />
     <ClCompile Include="..\src\main.cpp" />

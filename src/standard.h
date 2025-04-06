@@ -6,7 +6,7 @@
 	#pragma comment(lib, "ws2_32.lib")
 #endif
 
-#define	VERSION	"1.5.6"
+#define	VERSION	"1.5.7"
 #define	AUTHOR	"Mike Lovell"
 // FIXED BY arch3r https://arch3r.eu
 #define YEAR	((((__DATE__ [7] - '0') * 10 + (__DATE__ [8] - '0')) * 10 + (__DATE__ [9] - '0')) * 10 + (__DATE__ [10] - '0'))

@@ -7,6 +7,7 @@ class arguments_c
 		pcc_t	Destination;
 		int		Port;
 		int		Type;
+		int		Tprotocol;
 		int		Timeout;
 		int		Count;
 		bool	Continous;

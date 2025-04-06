@@ -24,7 +24,7 @@ pcc_t i18n_c::GetString(int id)
 														"Approximate connection times:\n"
 														"\tMinimum = $%.2fms$, Maximum = $%.2fms$, Average = $%.2fms$\n";
 
-		case ERROR_POUTOFMEMORY:					return	"Out of memory";
+		case ERROR_POUTOFMEMORY:				return	"Out of memory";
 		case ERROR_SOCKET_TIMEOUT:				return	"$Connection timed out$";
 		case ERROR_SOCKET_GENERALFAILURE:		return	"$General failure$";
 		case ERROR_SOCKET_CANNOTRESOLVE:		return	"$Cannot resolve host$";

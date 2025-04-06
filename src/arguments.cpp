@@ -15,18 +15,18 @@ void arguments_c::PrintUsage()
 	cout << i18n_c::GetString(STRING_USAGE) << endl;
 }
 
-
 int	arguments_c::Process(int argc, pc_t argv[], arguments_c &arguments)
 {
 	int		result			= 0;
 	int		value			= 0;
+	int		prtype			= 0;
 	bool	anyMatch		= false;
 	bool	gotDestination	= false;
 
 	arguments.Port		= 0;
 	arguments.Count		= 0;
 	arguments.Timeout	= 1000;
-	arguments.Type		= IPPROTO_TCP;
+	arguments.Type		= NULL;
 	arguments.Continous	= true;
 	arguments.UseColor	= true;
 
@@ -37,9 +37,23 @@ int	arguments_c::Process(int argc, pc_t argv[], arguments_c &arguments)
 		if (result = arguments_c::match(i, argc, argv, "-p", "--port", true, arguments.Port, anyMatch) != SUCCESS) return result;
 		if (result = arguments_c::match(i, argc, argv, "-c", "--count", true, arguments.Count, anyMatch) != SUCCESS) return result;
 		if (result = arguments_c::match(i, argc, argv, "-t", "--timeout", true, arguments.Timeout, anyMatch) != SUCCESS) return result;
+		if (result = arguments_c::match(i, argc, argv, "-pr", "--protocol", true, prtype, anyMatch) != SUCCESS) return result;
 
 		if (anyMatch)
 		{
+			if (prtype == 1){
+				cout << "Using TCP protocol" << endl;
+				arguments.Type = IPPROTO_TCP;
+
+			}
+			else if (prtype == 2){
+				cout << "Using UDP protocol" << endl;
+				arguments.Type = IPPROTO_UDP;
+			}
+			else if (prtype != 1) {
+				cout << "Dont mind me im just an error code 0x00002e" << endl;
+				//I dont know why it does not fucking work
+			}
 			i++;
 			continue;
 		}

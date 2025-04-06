@@ -36,7 +36,7 @@
     <ClCompile Include="..\src\timer.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\gettimeofday.c">
+    <ClCompile Include="..\src\gettimeofday.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\src\print.cpp">
