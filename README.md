@@ -8,7 +8,7 @@ Replace Adminstrator with your user name
 # Example usage
 ```
 C:\Users\arche>paping google.com -p 80
-paping v1.5.6 - Copyright (c) 2024 Mike Lovell Fixed by arch3r https://arch3r.eu
+paping v1.5.7 - Copyright (c) 2024 Mike Lovell Fixed by arch3r https://arch3r.eu
 Connecting to google.com on TCP 80:
 Connected to 142.250.75.14: time=47.16ms protocol=TCP port=80
 Connected to 142.250.75.14: time=42.79ms protocol=TCP port=80
