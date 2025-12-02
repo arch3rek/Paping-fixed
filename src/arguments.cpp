@@ -23,37 +23,24 @@ int	arguments_c::Process(int argc, pc_t argv[], arguments_c &arguments)
 	bool	anyMatch		= false;
 	bool	gotDestination	= false;
 
-	arguments.Port		= 0;
-	arguments.Count		= 0;
-	arguments.Timeout	= 1000;
-	arguments.Type		= NULL;
-	arguments.Continous	= true;
-	arguments.UseColor	= true;
+	arguments.Port = 0;
+	arguments.Count = 0;
+	arguments.Timeout = 1000;
+	arguments.Type = IPPROTO_TCP; // FIXED: Default to TCP
+	arguments.Continous = true;
+	arguments.UseColor = true;
 
-	for (int i=1; i<argc; i++)
+	for (int i = 1; i < argc; i++)
 	{
-		anyMatch	= false;
+		anyMatch = false;
 
 		if (result = arguments_c::match(i, argc, argv, "-p", "--port", true, arguments.Port, anyMatch) != SUCCESS) return result;
 		if (result = arguments_c::match(i, argc, argv, "-c", "--count", true, arguments.Count, anyMatch) != SUCCESS) return result;
 		if (result = arguments_c::match(i, argc, argv, "-t", "--timeout", true, arguments.Timeout, anyMatch) != SUCCESS) return result;
-		if (result = arguments_c::match(i, argc, argv, "-pr", "--protocol", true, prtype, anyMatch) != SUCCESS) return result;
 
 		if (anyMatch)
 		{
-			if (prtype == 1){
-				cout << "Using TCP protocol" << endl;
-				arguments.Type = IPPROTO_TCP;
-
-			}
-			else if (prtype == 2){
-				cout << "Using UDP protocol" << endl;
-				arguments.Type = IPPROTO_UDP;
-			}
-			else if (prtype != 1) {
-				cout << "Dont mind me im just an error code 0x00002e" << endl;
-				//I dont know why it does not fucking work
-			}
+			cout << "Using " << "\033[96m" << "TCP" << "\033[0m" << " protocol" << endl;
 			i++;
 			continue;
 		}
@@ -61,13 +48,12 @@ int	arguments_c::Process(int argc, pc_t argv[], arguments_c &arguments)
 		if (result = arguments_c::match(i, argc, argv, NULL, "--nocolor", false, value, anyMatch) != SUCCESS) return result;
 		if (value == 1) arguments.UseColor = false;
 
-
 		if (!anyMatch)
 		{
 			if (!gotDestination)
 			{
-				gotDestination			= true;
-				arguments.Destination	= argv[i];
+				gotDestination = true;
+				arguments.Destination = argv[i];
 			}
 			else
 			{
@@ -75,6 +61,7 @@ int	arguments_c::Process(int argc, pc_t argv[], arguments_c &arguments)
 			}
 		}
 	}
+
 
 	if (arguments.Count <= 0)
 	{

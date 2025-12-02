@@ -8,7 +8,7 @@ pcc_t i18n_c::GetString(int id)
 {
 	switch (id)
 	{
-		case STRING_USAGE:						return 	"Syntax: paping [options] destination\n\n"
+		case STRING_USAGE:						return 	"Syntax: paping destination [options]\n\n"
 														"Options:\n"
 														" -?, --help\tdisplay usage\n"
 														" -p, --port N\tset TCP port N (required)\n"

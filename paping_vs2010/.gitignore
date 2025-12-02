@@ -1,0 +1,105 @@
+# Visual Studio
+.vs/
+*.vcxproj.user
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+*.VC.db
+*.VC.VC.opendb
+ipch/
+*.opensdf
+*.sdf
+*.cache
+*.pdb
+*.obj
+*.idb
+*.tlog
+*.log
+*.lastbuildstate
+*.dbmdl
+*.dbmdl2
+*.VC.db-wal
+*.VC.db-shm
+
+# Build results
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.lib
+*.app
+*.pyd
+*.exp
+*.ilk
+*.iobj
+*.ipdb
+*.rsp
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+build/
+out/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Editor folders
+.vscode/
+.idea/
+*.code-workspace
+
+# AI/Assistant/Plugin files
+.copilot/
+.copilot.json
+.copilot-*
+*.copilot-*
+*.copilotignore
+
+# Temporary files
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*.swn
+*.~*
+*.orig
+
+# Crash and debug
+*.dmp
+*.mdmp
+
+# Others
+*.log
+*.trace
+*.pid
+*.seed
+*.ncb
+
+# Exclude test result files
+TestResults/
+*.trx
+
+# Exclude coverage reports
+coverage/
+*.gcda
+*.gcno
+*.gcov
+
+# Build output directories
+release/
+debug/
+Release/
+Debug/
+
+
+# Exclude by pattern
+!README.md
